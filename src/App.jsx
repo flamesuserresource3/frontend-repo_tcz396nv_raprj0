@@ -1,28 +1,30 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import FinancialLadder from './components/FinancialLadder';
-import ToolsSection from './components/ToolsSection';
+import Navbar from './components/Navbar.jsx';
+import HeroSection from './components/HeroSection.jsx';
+import FinancialLadder from './components/FinancialLadder.jsx';
+import ToolsSection from './components/ToolsSection.jsx';
 
-function Footer() {
+function App() {
   return (
-    <footer className="py-10 text-center text-white/60 bg-black/60 border-t border-white/10">
-      <div className="container mx-auto px-6 sm:px-10">
-        <p className="text-sm">Educational content should be referenced from accredited journals and literature. This demo focuses on visuals and planning tools.</p>
-        <p className="text-xs mt-2">© {new Date().getFullYear()} Financeal</p>
-      </div>
-    </footer>
-  );
-}
+    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-teal-500/30 selection:text-white">
+      {/* Global layered gradient background */}
+      <div className="fixed inset-0 -z-0 pointer-events-none bg-[radial-gradient(700px_400px_at_10%_0%,rgba(56,189,248,0.12),transparent),radial-gradient(800px_500px_at_90%_10%,rgba(45,212,191,0.10),transparent),radial-gradient(1000px_600px_at_50%_100%,rgba(99,102,241,0.10),transparent)]" />
 
-export default function App() {
-  return (
-    <div className="min-h-screen bg-black selection:bg-teal-300 selection:text-black">
       <Navbar />
       <HeroSection />
       <FinancialLadder />
       <ToolsSection />
-      <Footer />
+
+      <footer id="about" className="relative border-t border-white/10 mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <p className="text-sm text-slate-300/80">
+            Disclaimer: Educational content is designed for learning purposes and will reference Scopus-indexed journals and accredited financial literature. Not financial advice.
+          </p>
+          <p className="text-xs text-slate-400/70 mt-2">© {new Date().getFullYear()} Financeal</p>
+        </div>
+      </footer>
     </div>
   );
 }
+
+export default App;
